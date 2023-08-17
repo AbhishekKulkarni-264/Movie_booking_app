@@ -1,10 +1,19 @@
 package com.example.moviebookingapp.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
-public class Theater {
-    private City city;
+@Getter
+@Setter
+@Entity
+public class Theater extends BaseModel {
     private String name;
     private String adddress;
+    @OneToMany
     List<Hall> halls;
 }
